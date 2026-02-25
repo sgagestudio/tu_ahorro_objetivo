@@ -6,133 +6,303 @@
   <title>Objetivo de Ahorro — 15.000€/año</title>
   <style>
     :root{
-      --bg:#0b1220;
-      --card:rgba(255,255,255,.06);
-      --card2:rgba(255,255,255,.085);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.65);
-      --line:rgba(255,255,255,.12);
+      --bg: #0b1220;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.085);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.65);
+      --line: rgba(255,255,255,.12);
       --good:#34d399;
       --bad:#fb7185;
-      --shadow:0 18px 50px rgba(0,0,0,.45);
-      --radius:18px;
-      --radius2:14px;
-      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
-    *{box-sizing:border-box}
+
+    *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family:var(--sans);
-      color:var(--text);
-      min-height:100vh;
+      font-family: var(--sans);
+      color: var(--text);
       background:
         radial-gradient(1200px 600px at 15% 15%, rgba(167,139,250,.25), transparent 60%),
         radial-gradient(900px 500px at 80% 20%, rgba(110,231,255,.20), transparent 55%),
         radial-gradient(900px 600px at 45% 95%, rgba(52,211,153,.12), transparent 60%),
         var(--bg);
+      min-height:100vh;
     }
-    header{padding:28px 18px 8px;max-width:1100px;margin:0 auto;}
-    .title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;}
-    h1{margin:0;font-size:clamp(22px,3vw,34px);letter-spacing:.2px;}
-    .subtitle{margin:8px 0 0;color:var(--muted);line-height:1.35;}
+
+    header{
+      padding: 28px 18px 8px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .title{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: .2px;
+    }
+
+    .subtitle{
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height:1.35;
+    }
+
     .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 12px;border-radius:999px;
-      background:linear-gradient(90deg, rgba(110,231,255,.18), rgba(167,139,250,.16));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-      font-weight:600;color:rgba(255,255,255,.9);white-space:nowrap;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(110,231,255,.18), rgba(167,139,250,.16));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+      white-space:nowrap;
     }
+
     main{
-      max-width:1100px;margin:0 auto;padding:14px 18px 48px;
-      display:grid;grid-template-columns:1.15fr .85fr;gap:14px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 18px 48px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
     }
-    @media (max-width:980px){main{grid-template-columns:1fr;}}
+
+    @media (max-width: 980px){
+      main{ grid-template-columns: 1fr; }
+    }
+
     .card{
-      background:linear-gradient(180deg,var(--card),rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
     }
+
     .card .hd{
-      padding:16px 16px 12px;border-bottom:1px solid var(--line);
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
     }
-    .card .hd h2{margin:0;font-size:16px;letter-spacing:.2px;}
-    .card .bd{padding:16px;}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-    @media (max-width:700px){.grid2{grid-template-columns:1fr;}}
+
+    .card .hd h2{
+      margin:0;
+      font-size: 16px;
+      letter-spacing:.2px;
+    }
+
+    .card .bd{
+      padding: 16px;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 700px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
     .kpi{
-      background:linear-gradient(180deg,var(--card2),rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:var(--radius2);padding:12px;
+      background: linear-gradient(180deg, var(--card2), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius2);
+      padding: 12px 12px;
     }
-    .kpi .label{color:var(--muted);font-size:12px;margin-bottom:6px;}
-    .kpi .value{font-size:18px;font-weight:750;letter-spacing:.2px;}
-    .progressWrap{margin-top:12px;}
-    .progressTop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;color:var(--muted);font-size:12.5px;}
+    .kpi .label{
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+    .kpi .value{
+      font-size: 18px;
+      font-weight: 750;
+      letter-spacing: .2px;
+    }
+
+    .progressWrap{ margin-top: 12px; }
+    .progressTop{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 10px;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+
     .bar{
-      height:14px;border-radius:999px;background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.10);overflow:hidden;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.10);
+      height: 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
     }
-    .bar>div{
-      height:100%;width:0%;border-radius:999px;
-      background:linear-gradient(90deg, rgba(52,211,153,.95), rgba(110,231,255,.95), rgba(167,139,250,.95));
-      box-shadow:0 10px 30px rgba(110,231,255,.12);
-      transition:width .35s ease;
+
+    .bar > div{
+      height:100%;
+      width:0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(52,211,153,.95), rgba(110,231,255,.95), rgba(167,139,250,.95));
+      box-shadow: 0 10px 30px rgba(110,231,255,.12);
+      transition: width .35s ease;
     }
-    .hint{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.35;}
-    form{display:grid;gap:10px;}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-    @media (max-width:700px){.row{grid-template-columns:1fr;}}
-    label{display:grid;gap:6px;font-size:12px;color:var(--muted);}
-    input,select,button,textarea{font:inherit;color:var(--text);}
-    input,select,textarea{
-      padding:11px 12px;border-radius:12px;background:rgba(0,0,0,.22);
-      border:1px solid rgba(255,255,255,.12);outline:none;
-      transition:border-color .15s ease, transform .08s ease;
+
+    .hint{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height:1.35;
     }
-    input:focus,select:focus,textarea:focus{border-color:rgba(110,231,255,.55);}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+
+    form{ display:grid; gap: 10px; }
+
+    .row{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 700px){
+      .row{ grid-template-columns: 1fr; }
+    }
+
+    label{
+      display:grid;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    input, select, button, textarea{
+      font: inherit;
+      color: var(--text);
+    }
+
+    input, select, textarea{
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.12);
+      outline: none;
+      transition: border-color .15s ease, transform .08s ease;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(110,231,255,.55);
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 4px;
+    }
+
     button{
-      border:0;cursor:pointer;padding:11px 12px;border-radius:12px;
-      font-weight:750;letter-spacing:.2px;
-      box-shadow:0 14px 35px rgba(0,0,0,.35);
-      transition:transform .08s ease, filter .15s ease;
+      border: 0;
+      cursor: pointer;
+      padding: 11px 12px;
+      border-radius: 12px;
+      font-weight: 750;
+      letter-spacing:.2px;
+      box-shadow: 0 14px 35px rgba(0,0,0,.35);
+      transition: transform .08s ease, filter .15s ease;
     }
-    button:active{transform:translateY(1px);}
-    .btnGood{background:linear-gradient(90deg, rgba(52,211,153,.95), rgba(110,231,255,.85));color:rgba(0,0,0,.75);}
-    .btnBad{background:linear-gradient(90deg, rgba(251,113,133,.95), rgba(251,191,36,.72));color:rgba(0,0,0,.75);}
-    .btnGhost{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.9);box-shadow:none;}
-    button:disabled{opacity:.55;cursor:not-allowed;transform:none;}
+    button:active{ transform: translateY(1px); }
+
+    .btnGood{
+      background: linear-gradient(90deg, rgba(52,211,153,.95), rgba(110,231,255,.85));
+      color: rgba(0,0,0,.75);
+    }
+    .btnBad{
+      background: linear-gradient(90deg, rgba(251,113,133,.95), rgba(251,191,36,.72));
+      color: rgba(0,0,0,.75);
+    }
+    .btnGhost{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.9);
+      box-shadow:none;
+    }
+
     table{
-      width:100%;border-collapse:collapse;overflow:hidden;border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.18);
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
     }
-    th,td{padding:10px 10px;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;vertical-align:top;}
-    th{text-align:left;color:rgba(255,255,255,.78);font-size:12px;letter-spacing:.15px;background:rgba(255,255,255,.06);}
-    .amt.pos{color:var(--good);font-weight:750;}
-    .amt.neg{color:var(--bad);font-weight:750;}
-    .mini{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.35;}
-    .dbBox{display:grid;gap:10px;}
+
+    th, td{
+      padding: 10px 10px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      font-size: 13px;
+      vertical-align: top;
+    }
+    th{
+      text-align:left;
+      color: rgba(255,255,255,.78);
+      font-size: 12px;
+      letter-spacing: .15px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .amt.pos{ color: var(--good); font-weight: 750; }
+    .amt.neg{ color: var(--bad); font-weight: 750; }
+
+    .mini{
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height:1.35;
+    }
+
+    .dbBox{ display:grid; gap:10px; }
+
     textarea{
-      min-height:220px;resize:vertical;font-family:var(--mono);
-      font-size:12.5px;line-height:1.35;
+      min-height: 220px;
+      resize: vertical;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      line-height: 1.35;
     }
+
     .toast{
-      margin-top:10px;padding:10px 12px;border-radius:12px;background:rgba(0,0,0,.28);
-      border:1px solid rgba(255,255,255,.12);color:var(--muted);font-size:12.5px;display:none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(0,0,0,.28);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+      font-size: 12.5px;
+      display:none;
     }
-    .badge{
-      padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);font-size:12px;color:rgba(255,255,255,.8);
-      display:inline-flex;gap:8px;align-items:center;
-    }
-    .statusRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;}
-    .muted{color:var(--muted);}
-    .ok{color:var(--good);}
-    .danger{color:var(--bad);}
+
+    .muted{ color: var(--muted); }
+    .ok{ color: var(--good); }
+    .danger{ color: var(--bad); }
   </style>
 </head>
 
@@ -141,7 +311,7 @@
     <div class="title">
       <div>
         <h1>Objetivo de ahorro</h1>
-        <p class="subtitle">Ingresos y gastos con cálculo en tiempo real + sincronización en Cloudflare (texto remoto).</p>
+        <p class="subtitle">Seguimiento simple de ingresos y gastos con cálculo en tiempo real para llegar a <b>15.000€</b> al año.</p>
       </div>
       <div class="pill" id="yearPill">Año —</div>
     </div>
@@ -154,7 +324,6 @@
         <h2>Resumen</h2>
         <span class="muted" id="asOf">—</span>
       </div>
-
       <div class="bd">
         <div class="grid2">
           <div class="kpi">
@@ -165,6 +334,7 @@
             <div class="label">Ahorro neto (ingresos − gastos)</div>
             <div class="value" id="netKpi">—</div>
           </div>
+
           <div class="kpi">
             <div class="label">Total ingresos</div>
             <div class="value" id="incomeKpi">—</div>
@@ -180,7 +350,9 @@
             <span id="progressText">Progreso —</span>
             <span id="remainingText">Faltan —</span>
           </div>
-          <div class="bar"><div id="barFill"></div></div>
+          <div class="bar" aria-label="Barra de progreso">
+            <div id="barFill"></div>
+          </div>
           <div class="hint" id="rateHint">—</div>
         </div>
 
@@ -218,7 +390,7 @@
 
           <div class="actions">
             <button type="submit" class="btnGood">Añadir</button>
-            <button type="button" class="btnGhost" id="clearBtn">Limpiar todo</button>
+            <button type="button" class="btnGhost" id="clearBtn">Borrar todo</button>
           </div>
 
           <div class="toast" id="toast"></div>
@@ -247,8 +419,7 @@
         </div>
 
         <div class="mini">
-          Si usas varios dispositivos: abre la web, pulsa <b>Cargar nube</b> (para traer lo último) y luego ya añade movimientos.
-          Con <b>Auto-guardar</b> activado, cada cambio se guarda a la nube.
+          Los datos se guardan en <b>localStorage</b> (solo en este dispositivo/navegador).
         </div>
       </div>
     </section>
@@ -256,60 +427,25 @@
     <!-- DERECHA -->
     <aside class="card">
       <div class="hd">
-        <h2>Sincronización Cloudflare + hoja de texto</h2>
-        <span class="muted">/data</span>
+        <h2>Base de datos (texto dentro de la web)</h2>
+        <span class="muted">JSON</span>
       </div>
-
       <div class="bd">
         <div class="dbBox">
-          <div class="statusRow">
-            <span class="badge" id="cloudStatus">Nube: <b>no configurada</b></span>
-            <span class="badge" id="lastSync">Última sync: <b>—</b></span>
-          </div>
-
-          <div class="row">
-            <label>
-              API Base (tu Worker)
-              <input id="apiBase" type="text" placeholder="https://TU-WORKER.workers.dev" />
-            </label>
-            <label>
-              Token (X-Auth)
-              <input id="authToken" type="password" placeholder="(tu secreto)" />
-            </label>
-          </div>
-
-          <div class="row">
-            <label style="grid-column:1/-1;">
-              <span>Auto-guardar cambios en la nube</span>
-              <select id="autosave">
-                <option value="on">Activado</option>
-                <option value="off">Desactivado</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="actions">
-            <button type="button" class="btnGood" id="loadCloudBtn">Cargar nube</button>
-            <button type="button" class="btnGhost" id="saveCloudBtn">Guardar nube</button>
-            <button type="button" class="btnBad" id="wipeRemoteBtn">Vaciar nube</button>
-          </div>
-
           <div class="muted" style="font-size:13px;line-height:1.35;">
-            Abajo está tu “base de datos” como texto dentro de la web (JSON). Puedes editarla y pulsar “Importar”.
-            <br>Formato: <span style="font-family:var(--mono);">[{"id","type","date","desc","amount"}, ...]</span>
+            Esta “hoja de texto” refleja tu base de datos. Puedes copiar/pegar como backup o editar y luego importar.
           </div>
 
           <textarea id="dbText" spellcheck="false"></textarea>
 
           <div class="actions">
-            <button type="button" class="btnGhost" id="refreshTextBtn">Refrescar texto</button>
-            <button type="button" class="btnGood" id="importTextBtn">Importar desde texto</button>
-            <button type="button" class="btnBad" id="resetDemoBtn">Reset demo</button>
+            <button type="button" class="btnGhost" id="exportBtn">Refrescar texto</button>
+            <button type="button" class="btnGood" id="importBtn">Importar desde texto</button>
+            <button type="button" class="btnBad" id="resetBtn">Reset demo</button>
           </div>
 
           <div class="mini">
-            Nota: esto NO intenta escribir un archivo estático en Cloudflare Pages (eso no se puede).
-            Guarda un “texto” remoto mediante tu Worker (KV/R2) en la ruta <b>/data</b>.
+            Formato: array JSON de objetos <span style="font-family:var(--mono);">{"id","type","date","desc","amount"}</span>
           </div>
         </div>
       </div>
@@ -317,26 +453,17 @@
   </main>
 
   <script>
-    // =============================
-    // CONFIG
-    // =============================
-    const GOAL_YEAR = 15000;
+    // ===== Config =====
+    const GOAL_YEAR = 15000; // objetivo anual fijo
+    const STORAGE_KEY = "ahorro_db_v1";
 
-    // =============================
-    // STATE
-    // =============================
+    // ===== State =====
     /** @type {{id:string,type:"income"|"expense",date:string,desc:string,amount:number}[]} */
     let db = [];
-    let lastRemoteHash = null;     // para detectar cambios remotos y evitar pisadas
-    let lastSyncAt = null;
 
-    const SETTINGS_KEY = "ahorro_cloud_settings_v1";
-
-    // =============================
-    // HELPERS
-    // =============================
+    // ===== Helpers =====
     const € = (n) => Number(n || 0).toLocaleString("es-ES", { style:"currency", currency:"EUR" });
-    const clamp = (v,a,b) => Math.max(a, Math.min(b, v));
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
     const uid = () => Math.random().toString(16).slice(2) + "-" + Date.now().toString(16);
 
     const todayISO = () => {
@@ -351,15 +478,6 @@
       const ms = b.getTime() - a.getTime();
       return Math.max(0, Math.ceil(ms / (1000*60*60*24)));
     };
-
-    function djb2Hash(str){
-      let h = 5381;
-      for (let i=0;i<str.length;i++){
-        h = ((h << 5) + h) + str.charCodeAt(i);
-        h = h | 0;
-      }
-      return String(h);
-    }
 
     function toast(msg, kind="info"){
       const el = document.getElementById("toast");
@@ -382,9 +500,36 @@
         .replaceAll("'","&#039;");
     }
 
+    // ===== Persistence (localStorage) =====
+    function save(){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+      refreshDbText(false);
+    }
+
+    function load(){
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(raw){
+        try{
+          const parsed = JSON.parse(raw);
+          if(Array.isArray(parsed)) db = sanitize(parsed);
+          else db = [];
+        }catch{
+          db = [];
+        }
+      } else {
+        // demo inicial
+        db = [
+          { id: uid(), type:"income", date: todayISO(), desc:"Ingreso demo", amount: 1200 },
+          { id: uid(), type:"expense", date: todayISO(), desc:"Alquiler demo", amount: 550 },
+          { id: uid(), type:"expense", date: todayISO(), desc:"Compra demo", amount: 85.40 }
+        ];
+        save();
+      }
+    }
+
     function sanitize(arr){
       const out = [];
-      for (const x of arr){
+      for(const x of arr){
         if(!x || typeof x !== "object") continue;
         const type = (x.type === "expense") ? "expense" : "income";
         const date = (typeof x.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(x.date)) ? x.date : todayISO();
@@ -394,15 +539,13 @@
         out.push({
           id: (x.id && typeof x.id === "string") ? x.id : uid(),
           type, date, desc,
-          amount: Math.round(amount * 100) / 100
+          amount: Math.round(amount*100)/100
         });
       }
       return out;
     }
 
-    // =============================
-    // CALCULATIONS
-    // =============================
+    // ===== Calculations =====
     function totals(){
       let income = 0, expense = 0;
       for(const t of db){
@@ -411,7 +554,7 @@
       }
       income = Math.round(income*100)/100;
       expense = Math.round(expense*100)/100;
-      const net = Math.round((income-expense)*100)/100;
+      const net = Math.round((income - expense)*100)/100;
       return { income, expense, net };
     }
 
@@ -421,177 +564,25 @@
       const eoy = endOfYear(year);
 
       const remaining = Math.max(0, GOAL_YEAR - net);
-      const remainingDays = Math.max(1, daysBetween(now, eoy));
+      const remainingDays = Math.max(1, daysBetween(now, eoy)); // evita dividir por 0
 
       const perDay = remaining / remainingDays;
       const perWeek = perDay * 7;
+
       const avgMonthDays = 365.2425 / 12; // ~30.44
       const perMonth = remaining / (remainingDays / avgMonthDays);
 
-      return { year, remaining, remainingDays, perDay, perWeek, perMonth };
+      return {
+        year,
+        remaining,
+        remainingDays,
+        perDay,
+        perWeek,
+        perMonth
+      };
     }
 
-    // =============================
-    // TEXT DB
-    // =============================
-    function refreshDbText(showToast=true){
-      document.getElementById("dbText").value = JSON.stringify(db, null, 2);
-      if(showToast) toast("Texto actualizado.", "ok");
-    }
-
-    function importFromText(){
-      const ta = document.getElementById("dbText");
-      try{
-        const parsed = JSON.parse(ta.value);
-        if(!Array.isArray(parsed)) throw new Error("El JSON debe ser un array.");
-        db = sanitize(parsed);
-        render();
-        toast("Importación correcta ✅", "ok");
-        maybeAutoSaveCloud();
-      }catch(e){
-        toast(`No se pudo importar: ${e.message}`, "bad");
-      }
-    }
-
-    // =============================
-    // CLOUD SETTINGS
-    // =============================
-    function getSettings(){
-      const apiBase = (document.getElementById("apiBase").value || "").trim().replace(/\/+$/,"");
-      const token = (document.getElementById("authToken").value || "").trim();
-      const autosave = document.getElementById("autosave").value === "on";
-      return { apiBase, token, autosave };
-    }
-
-    function saveSettingsToLocal(){
-      const { apiBase, autosave } = getSettings();
-      // Por seguridad NO guardo el token automáticamente. Si quieres guardarlo, cámbialo aquí.
-      localStorage.setItem(SETTINGS_KEY, JSON.stringify({ apiBase, autosave }));
-    }
-
-    function loadSettingsFromLocal(){
-      try{
-        const raw = localStorage.getItem(SETTINGS_KEY);
-        if(!raw) return;
-        const s = JSON.parse(raw);
-        if(s.apiBase) document.getElementById("apiBase").value = s.apiBase;
-        if(typeof s.autosave === "boolean") document.getElementById("autosave").value = s.autosave ? "on" : "off";
-      }catch{}
-    }
-
-    function updateCloudStatus(){
-      const { apiBase, token } = getSettings();
-      const ok = !!apiBase;
-      document.getElementById("cloudStatus").innerHTML = ok
-        ? `Nube: <b>configurada</b>${token ? `` : ` <span class="danger">(sin token)</span>`}`
-        : `Nube: <b>no configurada</b>`;
-      document.getElementById("lastSync").innerHTML = `Última sync: <b>${lastSyncAt ? lastSyncAt : "—"}</b>`;
-
-      const saveBtn = document.getElementById("saveCloudBtn");
-      const loadBtn = document.getElementById("loadCloudBtn");
-      const wipeBtn = document.getElementById("wipeRemoteBtn");
-      loadBtn.disabled = !apiBase;
-      saveBtn.disabled = !apiBase || !token;
-      wipeBtn.disabled = !apiBase || !token;
-    }
-
-    // =============================
-    // CLOUD API
-    // =============================
-    async function cloudGetText(){
-      const { apiBase } = getSettings();
-      const res = await fetch(`${apiBase}/data`, { method:"GET" });
-      if(!res.ok) throw new Error(`No se pudo leer /data (${res.status})`);
-      return await res.text();
-    }
-
-    async function cloudPutText(text){
-      const { apiBase, token } = getSettings();
-      const res = await fetch(`${apiBase}/data`, {
-        method:"PUT",
-        headers:{
-          "Content-Type":"text/plain; charset=utf-8",
-          "X-Auth": token
-        },
-        body:text
-      });
-      if(!res.ok){
-        const msg = await res.text().catch(()=> "");
-        throw new Error(`No se pudo guardar (${res.status}) ${msg}`.trim());
-      }
-    }
-
-    async function loadFromCloud(){
-      saveSettingsToLocal();
-      updateCloudStatus();
-
-      const text = await cloudGetText();
-      let parsed;
-      try{
-        parsed = JSON.parse(text);
-      }catch{
-        throw new Error("El remoto no es JSON válido.");
-      }
-      if(!Array.isArray(parsed)) throw new Error("El remoto debe ser un array JSON.");
-
-      db = sanitize(parsed);
-      lastRemoteHash = djb2Hash(JSON.stringify(db)); // hash normalizado
-      lastSyncAt = new Date().toLocaleString("es-ES");
-      render();
-      toast("Cargado desde la nube ✅", "ok");
-    }
-
-    async function saveToCloud({ force=false } = {}){
-      saveSettingsToLocal();
-      updateCloudStatus();
-
-      // protección simple contra pisadas:
-      // 1) si ya cargaste una versión antes (lastRemoteHash), comprobaremos si el remoto cambió
-      if(lastRemoteHash && !force){
-        const remoteText = await cloudGetText();
-        let remoteParsed;
-        try { remoteParsed = JSON.parse(remoteText); } catch { remoteParsed = null; }
-        if(Array.isArray(remoteParsed)){
-          const remoteNormHash = djb2Hash(JSON.stringify(sanitize(remoteParsed)));
-          if(remoteNormHash !== lastRemoteHash){
-            const ok = confirm(
-              "Parece que la nube cambió desde la última vez que cargaste.\n\n" +
-              "Si guardas ahora, podrías pisar cambios hechos en otro dispositivo.\n\n" +
-              "¿Quieres SOBRESCRIBIR igualmente?"
-            );
-            if(!ok) return;
-          }
-        }
-      }
-
-      const text = JSON.stringify(db, null, 2);
-      // worker valida que sea array JSON
-      await cloudPutText(text);
-
-      lastRemoteHash = djb2Hash(JSON.stringify(db));
-      lastSyncAt = new Date().toLocaleString("es-ES");
-      updateCloudStatus();
-      toast("Guardado en la nube ✅", "ok");
-    }
-
-    async function wipeCloud(){
-      const ok = confirm("¿Seguro que quieres vaciar la nube? Esto guardará [] en /data.");
-      if(!ok) return;
-      db = [];
-      render();
-      await saveToCloud({ force:true });
-    }
-
-    async function maybeAutoSaveCloud(){
-      const { apiBase, token, autosave } = getSettings();
-      if(!apiBase || !token || !autosave) return;
-      // No bloqueamos UX si falla
-      saveToCloud().catch(e => toast(e.message, "bad"));
-    }
-
-    // =============================
-    // RENDER
-    // =============================
+    // ===== Render =====
     function render(){
       const { income, expense, net } = totals();
       const r = requiredRates(net);
@@ -621,7 +612,6 @@
           `Media necesaria: <b>${€(r.perDay)}</b>/día · <b>${€(r.perWeek)}</b>/semana · <b>${€(r.perMonth)}</b>/mes.`;
       }
 
-      // Tabla
       const body = document.getElementById("txBody");
       body.innerHTML = "";
 
@@ -631,6 +621,7 @@
         const typeLabel = t.type === "income" ? "Ingreso" : "Gasto";
         const amtClass = t.type === "income" ? "pos" : "neg";
         const sign = t.type === "income" ? "+" : "−";
+
         tr.innerHTML = `
           <td>${t.date}</td>
           <td>${typeLabel}</td>
@@ -649,28 +640,38 @@
         btn.addEventListener("click", ()=>{
           const id = btn.getAttribute("data-del");
           db = db.filter(x => x.id !== id);
+          save();
           render();
-          maybeAutoSaveCloud();
         });
       });
 
       refreshDbText(false);
-      updateCloudStatus();
     }
 
-    // =============================
-    // INIT
-    // =============================
+    // ===== DB text area =====
+    function refreshDbText(showToast=true){
+      const ta = document.getElementById("dbText");
+      ta.value = JSON.stringify(db, null, 2);
+      if(showToast) toast("Texto actualizado.", "ok");
+    }
+
+    function importFromText(){
+      const ta = document.getElementById("dbText");
+      try{
+        const parsed = JSON.parse(ta.value);
+        if(!Array.isArray(parsed)) throw new Error("El JSON debe ser una lista (array).");
+        db = sanitize(parsed);
+        save();
+        render();
+        toast("Importación correcta ✅", "ok");
+      }catch(e){
+        toast(`No se pudo importar: ${e.message}`, "bad");
+      }
+    }
+
+    // ===== Events =====
     document.getElementById("date").value = todayISO();
 
-    // Demo inicial (local) por si todavía no usas nube
-    db = [
-      { id: uid(), type:"income", date: todayISO(), desc:"Ingreso demo", amount: 1200 },
-      { id: uid(), type:"expense", date: todayISO(), desc:"Alquiler demo", amount: 550 },
-      { id: uid(), type:"expense", date: todayISO(), desc:"Compra demo", amount: 85.40 }
-    ];
-
-    // Eventos UI
     document.getElementById("txForm").addEventListener("submit", (ev)=>{
       ev.preventDefault();
 
@@ -689,67 +690,41 @@
         type: (type === "expense") ? "expense" : "income",
         date,
         desc,
-        amount: Math.round(amount * 100) / 100
+        amount: Math.round(amount*100)/100
       });
 
       document.getElementById("amount").value = "";
       document.getElementById("desc").value = "";
 
+      save();
       render();
       toast("Movimiento añadido.", "ok");
-      maybeAutoSaveCloud();
     });
 
     document.getElementById("clearBtn").addEventListener("click", ()=>{
       if(!confirm("¿Seguro que quieres borrar TODOS los movimientos?")) return;
       db = [];
+      save();
       render();
       toast("Datos borrados.", "ok");
-      maybeAutoSaveCloud();
     });
 
-    document.getElementById("refreshTextBtn").addEventListener("click", ()=> refreshDbText(true));
-    document.getElementById("importTextBtn").addEventListener("click", ()=> importFromText());
-    document.getElementById("resetDemoBtn").addEventListener("click", ()=>{
+    document.getElementById("exportBtn").addEventListener("click", ()=> refreshDbText(true));
+    document.getElementById("importBtn").addEventListener("click", ()=> importFromText());
+
+    document.getElementById("resetBtn").addEventListener("click", ()=>{
       db = [
         { id: uid(), type:"income", date: todayISO(), desc:"Ingreso demo", amount: 1800 },
         { id: uid(), type:"expense", date: todayISO(), desc:"Alquiler demo", amount: 700 },
         { id: uid(), type:"expense", date: todayISO(), desc:"Gasolina demo", amount: 60.25 }
       ];
-      lastRemoteHash = null;
-      lastSyncAt = null;
+      save();
       render();
       toast("Demo cargada.", "ok");
     });
 
-    document.getElementById("loadCloudBtn").addEventListener("click", ()=>{
-      loadFromCloud().catch(e => toast(e.message, "bad"));
-    });
-
-    document.getElementById("saveCloudBtn").addEventListener("click", ()=>{
-      saveToCloud().catch(e => toast(e.message, "bad"));
-    });
-
-    document.getElementById("wipeRemoteBtn").addEventListener("click", ()=>{
-      wipeCloud().catch(e => toast(e.message, "bad"));
-    });
-
-    document.getElementById("apiBase").addEventListener("input", ()=>{
-      saveSettingsToLocal();
-      updateCloudStatus();
-    });
-    document.getElementById("autosave").addEventListener("change", ()=>{
-      saveSettingsToLocal();
-      updateCloudStatus();
-    });
-    document.getElementById("authToken").addEventListener("input", ()=>{
-      updateCloudStatus();
-    });
-
-    // Carga ajustes (API base + autosave)
-    loadSettingsFromLocal();
-
-    // Render inicial
+    // ===== Init =====
+    load();
     render();
   </script>
 </body>
